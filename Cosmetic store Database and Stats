@@ -1,0 +1,30 @@
+CREATE TABLE cosmetics_csi (id INTEGER PRIMARY KEY, item TEXT, price INTEGER, color TEXT, inventory INTEGER);
+
+INSERT INTO cosmetics_csi VALUES(1, 'lipgloss', 20, 'crimson',5);
+INSERT INTO cosmetics_csi VALUES(2, 'chunky_glitter', 15, 'slasher',8);
+INSERT INTO cosmetics_csi VALUES(3, 'blusher', 10, 'morbid',11);
+INSERT INTO cosmetics_csi VALUES(4, 'skinlike', 45.35, 'alive',0);
+INSERT INTO cosmetics_csi VALUES(5, 'shadow', 7, 'dead_inside',1);
+INSERT INTO cosmetics_csi VALUES(6, 'faux_frec', 6.99, 'soot',22);
+INSERT INTO cosmetics_csi VALUES(7, 'toxic_lip', 15, 'brittney',3);
+INSERT INTO cosmetics_csi VALUES(8, 'elixir', 50, 'none',11);
+INSERT INTO cosmetics_csi VALUES(9, 'anti_sun', 25, 'none',4);
+INSERT INTO cosmetics_csi VALUES(10, 'ghastly', 15.52, 'azuel',2); 
+INSERT INTO cosmetics_csi VALUES(11, 'Nightshade', 25.99, 'withering_blue',0); 
+INSERT INTO cosmetics_csi VALUES(12, 'ink', 10, 'black',6);
+INSERT INTO cosmetics_csi VALUES(13, 'posies',75, 'assorted',13);
+INSERT INTO cosmetics_csi VALUES(14, 'obsidian', 75, 'assorted',4);
+INSERT INTO cosmetics_csi VALUES(15, 'plague', 75, 'assorted',1);
+
+--display the database ordered by price.
+SELECT * FROM cosmetics_csi 
+ORDER BY price asc;
+
+--what are the 3 most expensive items?
+SELECT item, price, 
+FROM cosmetics_csi
+ORDER BY price asc
+limit 3;
+
+--what is the total number of items in inventory?
+SELECT SUM(inventory) FROM cosmetics_csi;
