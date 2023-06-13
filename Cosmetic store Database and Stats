@@ -20,11 +20,11 @@ INSERT INTO cosmetics_csi VALUES(15, 'plague', 75, 'assorted',1);
 SELECT * FROM cosmetics_csi 
 ORDER BY price asc;
 
---what are the 3 most expensive items?
-SELECT item, price, 
-FROM cosmetics_csi
-ORDER BY price asc
-limit 3;
-
 --what is the total number of items in inventory?
 SELECT SUM(inventory) FROM cosmetics_csi;
+
+--what items are not selling well?
+SELECT * FROM cosmetics_csi 
+WHERE inventory >10
+ORDER BY price asc
+limit 3;
